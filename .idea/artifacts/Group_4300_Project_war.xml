@@ -3,7 +3,7 @@
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <module>Group_4050_Project</module>
+        <module>Group_4300_Project</module>
         <packaging>war</packaging>
       </options>
     </properties>
