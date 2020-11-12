@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .overview {
+            float: right;
+            width: 30%;
+            margin: 2em;
+            padding: 2em;
+            border: thin solid gray;
+            text-align: center;
+        }
+
+        .numItems {
+            border-bottom: thin solid grey;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 class="title">StoreName</h1>
+        <ul class="links">
+            <li>Home</li>
+            <li>Store</li>
+            <li><a href="AboutUs.html" style="text-decoration: none; color: white">About</a></li>
+            <li><a href="Contact.html" style="text-decoration: none; color: white">Contact</a></li>
+        </ul>
+        <ul class="icons">
+            <li><img src="../resources/search-icon.svg" alt="" class="top-icon"></li>
+            <li><img src="../resources/profile-icon.svg" alt="" class="top-icon"></li>
+            <li><img src="../resources/cart-icon.svg" alt="" class="top-icon"></li>
+        </ul>
+    </nav>
+
+    <div class="overview">
+        <!-- Will be easier to properly implement once database is running
+             Whole area is basically a placeholder   -->
+        <h2 class="numItems">X Items</h2>
+        <p>Sub-total: ___</p>
+        <p>Shipping: ___</p>
+        <p>Tax: ___</p>
+        <input type="submit" class="checkout-button" id="checkout-button" name="checkout-button" value="CHECKOUT"/>
+    </div>
+</body>
+</html>
