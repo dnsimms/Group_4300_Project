@@ -11,6 +11,170 @@ body {
     flex-direction: column;
 }
 
+.input{
+    border-style: solid;
+    border-color: darkgray;
+    border-width: thin;
+    margin:auto;
+    width: 25%;
+    height: 400px;
+    text-align: center;
+    box-shadow: 7px 7px 8px #404040;
+}
+#passModal{
+    position:fixed;
+    border-style: solid;
+    border-color: #404040;
+    border-width: thin;
+    margin-top: -300px;
+    margin-left: 585px;
+    background-color: white;
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    width: 40%;
+    height: 260px;
+    text-align: center;
+    display: none;
+    opacity: 1.5 !important;
+}
+#regModal{
+    position:fixed;
+    border-style: solid;
+    border-color: #404040;
+    border-width: thin;
+    margin-top: -400px;
+    margin-left: 620px;
+    background-color: white;
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    width: 35%;
+    height: 700px;
+    text-align: center;
+    display: none;
+    opacity: 1.5 !important;
+}
+.modalTitle{
+    padding-top: 65px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 30px;
+}
+.regRows{
+    padding-bottom: 30px;
+}
+.fields{
+    width: 500px;
+    height: 40px;
+}
+.form-label{
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: dimgray;
+}
+.mTitle{
+    padding-top: 65px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 30px;
+    font-size: 35px;
+}
+#fEmail{
+    width: 420px;
+    height: 30px;
+}
+#user{
+    width: 400px;
+    height: 35px;
+    text-align: center;
+}
+#password{
+    width: 400px;
+    height: 35px;
+    text-align: center;
+}
+.miniLTitle{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 45px;
+    padding-top: 20px;
+    color: dimgray;
+}
+.LTitle{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 30px;
+    padding-top: 45px;
+}
+.ETitle{
+    padding-bottom: 5px;
+    color: dimgray;
+    font-weight: bold;
+}
+.PTitle{
+    padding-bottom: 5px;
+    padding-top: 35px;
+    color: dimgray;
+    font-weight: bold;
+}
+.loginButton{
+    display: block;
+    width: 300px;
+    margin: 0;
+    position: absolute;
+    transform: translateX(30%) translateY(100%);
+    background-color: dimgray;
+    color:white;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+}
+.forgotButton{
+    display: block;
+    transform: translateX(50%) translateY(100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border:none;
+    border-radius: 8px;
+    background-color: dimgray;
+    font-weight: bold;
+    color: white;
+    width: 250px;
+    height: 30px;
+}
+.close{
+    display: block;
+    transform: translateX(155%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border:none;
+    border-radius: 8px;
+    background-color: dimgray;
+    font-weight: bold;
+    color: white;
+    width: 250px;
+    height: 30px;
+}
+.forgotPassword{
+    display: block;
+    border: none;
+    text-decoration: underline;
+    transform: translateX(215%) translateY(550%);
+    cursor: pointer;
+    background-color: transparent;
+}
+#rButton{
+    transform: translateX(325%) translateY(450%);
+}
+
+#join{
+    transform: translateX(25%) translateY(100%);
+}
+#rClose{
+    transform: translateX(140%) translateY(0%);
+}
+
 nav {
     width: 100%;
     display: flex;
