@@ -21,6 +21,11 @@ body {
     text-align: center;
     box-shadow: 7px 7px 8px #404040;
 }
+
+.overlay{
+    opacity: 1;
+}
+
 #passModal{
     position:fixed;
     border-style: solid;
