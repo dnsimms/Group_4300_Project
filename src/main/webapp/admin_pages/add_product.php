@@ -22,9 +22,9 @@ if (
 
     // Add the product to the database  
     $query = "INSERT INTO products
-(name, imgUrl, quantity, price, size, categoryID, color)
+(name, imgUrl, quantity, price, categoryID, color)
 VALUES
-(:name, :imgUrl, 1, :price, 'M', :category_id, :color)";
+(:name, :imgUrl, 1, :price, :category_id, :color)";
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->bindValue(':name', $name);
