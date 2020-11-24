@@ -65,7 +65,7 @@
             }
 
         }
-        String userQuery = "SELECT email, password FROM users ";
+        String userQuery = "SELECT email, password, admin FROM users ";
         PreparedStatement prep1 = connection.prepareStatement(userQuery);
         ResultSet userResults = prep1.executeQuery(userQuery);
 
@@ -78,7 +78,7 @@
             <!-- Email area -->
             <h2 class="miniLTitle">LOGIN</h2>
             <p class="ETitle">Email</p>
-            <input type="text" id="user" name="user" tabindex="1" placeholder="Email"required/>
+            <input type="text" id="user" name="user" tabindex="1" placeholder="Email" required/>
 
             <!-- Password area -->
             <p class="PTitle">Password</p>
@@ -102,20 +102,27 @@
         if(request.getParameter("user") != null){
             while(userResults.next()){
                 if(request.getParameter("user").equals(userResults.getString(1))){
-                    if(request.getParameter("password").equals(userResults.getString(2))){%>
-                         <form id="checkLogin" name="checkLogin" method="post" action="index.html">
-                            <input type="checkbox" hidden checked id="loggedIn" name="loggedIn">
-                        </form>
-                         <script>
-                            document.getElementById("checkLogin").action ="http://localhost:63342/Group_4300_Project/src/main/webapp/index.php?_ijt=vi3sg60uigguqui27mglus0tmh";
-                            document.getElementById("checkLogin").submit();
-                         </script>
+                    if(request.getParameter("password").equals(userResults.getString(2))){
+                        if(userResults.getInt(3) == 1){%>
+                            <form id="checkLogin" name="checkLogin" method="post" action="index.html">
+                                <input type="checkbox" hidden checked id="loggedIn" name="loggedIn">
+                            </form>
+                            <script>
+                                document.getElementById("checkLogin").action ="http://localhost:63342/Group_4300_Project/src/main/webapp/admin_pages/index.php?_ijt=4uuhsp2s9t5m8iojslrf6ji95e";
+                                document.getElementById("checkLogin").submit();
+                            </script>
     <%
 
-                    }
-                }
-            }
-        }
+        }%>
+                            <script>
+                                document.getElementById("checkLogin").action ="http://localhost:63342/Group_4300_Project/src/main/webapp/index.php?_ijt=vi3sg60uigguqui27mglus0tmh";
+                                document.getElementById("checkLogin").submit();
+                            </script>
+
+    <%             }
+    }
+    }
+    }
     %>
 
     <div class="modal fade" id="passModal" role="dialog">

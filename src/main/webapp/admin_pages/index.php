@@ -117,6 +117,7 @@ $statement3->closeCursor();
                 </tbody>
             </table>
             <a href="add_product_form.php">Add Product</a>
+            <a href="http://localhost:8080/Group_4300_Project_war_exploded/Login.jsp">Log Out</a>
         </main>
     </div>
 
