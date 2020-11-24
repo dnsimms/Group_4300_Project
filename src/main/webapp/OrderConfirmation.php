@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,3 +31,14 @@
 </body>
 
 </html>
+
+<?php
+
+include('./admin_pages/database.php');
+
+$query = 'DELETE FROM cart';
+$statement = $db->prepare($query);
+$statement->execute();
+$statement->closeCursor();
+
+?>
