@@ -180,7 +180,11 @@ $statement->closeCursor();
 </main>
 
 <aside class="overview">
-    <h2>X Items</h2>
+    <?php $num_items = 0; ?>
+    <?php foreach ($products as $product) : ?>
+        <?php $num_items++; ?>
+    <?php endforeach; ?>
+    <h2><?php echo $num_items; ?> Items</h2>
     <table class="table-cart">
         <tbody>
         <tr>

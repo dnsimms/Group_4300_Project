@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <title>TDC Outfitters | Order Confirmation</title>
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        main {
+            padding: 2rem 10rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,8 +29,11 @@
         </ul>
     </nav>
     <main>
-        <h2>Your order has been confirmed!</h2>
-        <p>Thank you for shopping at StoreName!</p>
+        <h2>Your order has been confirmed!</h2><br>
+
+        <h3>Thank you for shopping at TDC Outfitters!</h3>
+        <p>Click on the store button to continue shopping.</p>
+
 
 
     </main>
