@@ -27,7 +27,7 @@ $statement->closeCursor();
 
         .overview2 {
             width: 30%;
-            height: 40%;
+            height: 28vh;
             margin: 2em;
             padding: 2em;
             border: thin solid gray;
@@ -38,7 +38,8 @@ $statement->closeCursor();
             border-bottom: thin solid grey;
         }
 
-        .checkout-button, #deleteButton {
+        .checkout-button,
+        #deleteButton {
             background-color: gray;
             border: none;
             text-align: center;

@@ -4,11 +4,17 @@
     box-sizing: border-box;
 }
 
+html {
+    background-color: #404040;
+}
+
 body {
     font-family: sans-serif;
     border: 1px solid gray;
     width: 45%;
     margin: 5vh auto;
+    box-shadow: 5px 5px 10px black;
+    background-color: white
 }
 
 header {
@@ -32,7 +38,7 @@ header {
 .section-header {
     margin-bottom: 1.5rem;
     font-size: larger;
-    color: maroon;
+    color: black;
 }
 
 .header-link {
@@ -40,11 +46,11 @@ header {
 }
 
 .header-link:visited {
-    color: firebrick;
+    color: #404040;
 }
 
 h3 {
-    color: firebrick;
+    color: #404040;
     margin-bottom: 1rem;
     text-transform: capitalize;
     font-size: x-large;

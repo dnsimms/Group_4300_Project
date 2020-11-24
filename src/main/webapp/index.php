@@ -44,6 +44,10 @@ $statement->closeCursor();
             opacity: 1;
             transition: .5s ease;
         }
+
+        .clothing-item:hover {
+            transform: scale(1.1);
+        }
     </style>
 
 </head>
