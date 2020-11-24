@@ -4,17 +4,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Order Confirmation</title>
+    <title>TDC Outfitters | Order Confirmation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav>
-        <h1 class="title">StoreName</h1>
+        <h1 class="title">TDC Outfitters</h1>
         <ul class="links">
             <li><a href="index.php" style="text-decoration: none; color: white">Home</a></li>
-            <li><a href="all-items.php"style="text-decoration: none; color: white">Store</a></li>
+            <li><a href="all-items.php" style="text-decoration: none; color: white">Store</a></li>
             <li><a href="AboutUs.html" style="text-decoration: none; color: white">About</a></li>
             <li><a href="Contact.html" style="text-decoration: none; color: white">Contact</a></li>
         </ul>
@@ -31,4 +33,5 @@
 
     </main>
 </body>
+
 </html>

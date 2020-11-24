@@ -20,13 +20,13 @@ $statement->closeCursor();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Product Manager | Home</title>
+    <title>TDC Outfitters | Manage Categories</title>
 </head>
 
 <body>
     <header>
         <a href="index.php" class="title-link">
-            <h1>Product Manager</h1>
+            <h1>TDC Outfitters | Manage Categories</h1>
         </a>
     </header>
     <div class="container">
@@ -68,7 +68,7 @@ $statement->closeCursor();
         <a href="index.php" id="product-link">List Products</a>
     </div>
 
-    <footer>&copy; <?php echo date('Y') ?> StoreName, Inc.</footer>
+    <footer>&copy; <?php echo date('Y') ?> TDC Outfitters, Inc.</footer>
 
 </body>
 
