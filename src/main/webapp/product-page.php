@@ -22,6 +22,17 @@ $product = $statement->fetch();
     <link rel="stylesheet" href="styles.css">
 
     <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
         main {
             padding: 2rem 10rem;
             height: 100%;
@@ -33,8 +44,53 @@ $product = $statement->fetch();
             height: 100%;
         }
 
+        .product-details {
+            width: 40%;
+        }
+
+        .product-name {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
         .product-image {
             margin-right: 5rem;
+        }
+
+        .product-group {
+            display: flex;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .product-label {
+            width: 20%;
+        }
+
+        p {
+            width: 20%;
+        }
+
+        input {
+            width: 2.5rem;
+            height: 2rem;
+            padding: .5rem;
+            text-align: right;
+        }
+
+        input[type=submit] {
+            margin-top: 1rem;
+            width: 10rem;
+            height: 3rem;
+            background-color: #404040;
+            border: none;
+            color: white;
+            text-align: center;
+        }
+
+        input[type=submit]:hover {
+            transform: scale(1.1);
         }
     </style>
 
@@ -66,6 +122,33 @@ $product = $statement->fetch();
                 <h2 class="product-name">
                     <?php echo $product['name'] ?>
                 </h2>
+                <div class="product-group">
+                    <p class="product-label">Color:</p>
+                    <p style="text-transform: capitalize;"><?php echo $product['color'] ?></p>
+                </div>
+                <div class="product-group">
+                    <p class="product-label">Price:</p>
+                    <p> $<?php echo $product['price'] ?>.00</p>
+                </div>
+                <form action="">
+                    <input type="hidden" value="<?php echo $productID ?>">
+                    <div class="product-group">
+                        <label for="" class="product-label">Size:</label>
+                        <select name="size" id="">
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <div class="product-group">
+                        <label class="product-label">Quantity:</label>
+                        <input type="number" name="quantity" min="0">
+                    </div>
+
+                    <input type="submit" value="Add To Cart">
+                </form>
             </div>
         </div>
     </main>
