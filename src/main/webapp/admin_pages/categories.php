@@ -80,7 +80,7 @@ try {
         </main>
     </div>
 
-    <footer>&copy; 2010 My Guitar Shop, Inc.</footer>
+    <footer>&copy; StoreName, Inc.</footer>
 
 </body>
 

@@ -120,7 +120,7 @@ $statement3->closeCursor();
         </main>
     </div>
 
-    <footer>&copy; <?php echo date('Y') ?> My Guitar Shop, Inc.</footer>
+    <footer>&copy; <?php echo date('Y') ?> StoreName, Inc.</footer>
 
 </body>
 

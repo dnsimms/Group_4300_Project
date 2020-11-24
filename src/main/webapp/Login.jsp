@@ -107,7 +107,7 @@
                             <input type="checkbox" hidden checked id="loggedIn" name="loggedIn">
                         </form>
                          <script>
-                            document.getElementById("checkLogin").action ="/Group_4300_Project_war_exploded/index.html";
+                            document.getElementById("checkLogin").action ="http://localhost:63342/Group_4300_Project/src/main/webapp/index.php?_ijt=vi3sg60uigguqui27mglus0tmh";
                             document.getElementById("checkLogin").submit();
                          </script>
     <%

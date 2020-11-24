@@ -3,7 +3,7 @@
 <!-- the head section -->
 
 <head>
-    <title>My Guitar Shop</title>
+    <title>Admin Homepage</title>
 </head>
 <!-- the body section -->
 

@@ -61,7 +61,7 @@ $statement->closeCursor();
         <a href="index.php" id="product-link">View Product List</a>
     </div>
 
-    <footer>&copy; <?php echo date('Y') ?> My Guitar Shop, Inc.</footer>
+    <footer>&copy; <?php echo date('Y') ?> StoreName, Inc.</footer>
 
 </body>
 

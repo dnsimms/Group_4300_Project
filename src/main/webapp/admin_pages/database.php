@@ -1,7 +1,8 @@
-<?php 
-    $dsn = 'mysql:host=localhost;dbname=storedb1';
+<?php
+
+    $dsn = 'mysql:host=localhost;dbname=4300_products';
     $username = 'root';
-    $password = '';
+    $password = 'G97t678!';
     
     try {
         $db = new PDO($dsn, $username, $password);
