@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <h1 class="title">StoreName</h1>
+        <ul class="links">
+            <li>Home</li>
+            <li>Store</li>
+            <li><a href="AboutUs.html" style="text-decoration: none; color: white">About</a></li>
+            <li><a href="Contact.html" style="text-decoration: none; color: white">Contact</a></li>
+        </ul>
+        <ul class="icons">
+            <li><img src="../resources/search-icon.svg" alt="" class="top-icon"></li>
+            <li><img src="../resources/profile-icon.svg" alt="" class="top-icon"></li>
+            <li><img src="../resources/cart-icon.svg" alt="" class="top-icon"></li>
+        </ul>
+    </nav>
+    <main>
+        <form>
+            <h2 class="shippingAdd">Shipping Address</h2>
+            <label class="checkout-form-label" for="address1">Address 1</label><br>
+            <input type="text" class="checkout-fields" id="address1" name="address1" required/><br>
+            <label class="checkout-form-label" for="address2">Address 2</label><br>
+            <input type="text" class="checkout-fields" id="address2" name="address2"/><br>
+            <label class="checkout-form-label" for="city">City</label>
+            <label class="checkout-form-label" for="state">State</label>
+            <label class="checkout-form-label" for="zip-code">Zip Code</label><br>
+            <input type="text" class="checkout-fields" id="city" name="city" required/>
+            <input type="text" class="checkout-fields" id="state" name="state" required/>
+            <input type="text" class="checkout-fields" id="zip-code" name="state"
+                   pattern="[0-9\s]" maxlength="5" required/><br>
+            <h2 class="paymentInfo">Payment Information</h2>
+            <label class="checkout-form-label" for="ccn">Card Number</label>
+            <input type="text" class="checkout-fields" id="ccn" name="ccn" pattern="[0-9\s{13,19}"
+                   maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+
+
+
+        </form>
+
+    </main>
+
+</body>
+</html>

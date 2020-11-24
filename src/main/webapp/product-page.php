@@ -109,7 +109,7 @@ $product = $statement->fetch();
         <ul class="icons">
             <li><a href="search-page.php"><img src="search-icon.svg" alt="" class="top-icon"></a></li>
             <li><a href="http://localhost:8080/Group_4300_Project_war_exploded/Login.jsp"><img src="profile-icon.svg" alt="" class="top-icon" id="entry"></a></li>
-            <li><a href="ShoppingCart.html"><img src="cart-icon.svg" alt="" class="top-icon"></a></li>
+            <li><a href="ShoppingCart.php"><img src="cart-icon.svg" alt="" class="top-icon"></a></li>
         </ul>
     </nav>
     <main>
