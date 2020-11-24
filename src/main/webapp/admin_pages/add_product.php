@@ -5,29 +5,32 @@ $category_id = filter_input(
     'category_id',
     FILTER_VALIDATE_INT
 );
-$code = filter_input(INPUT_POST, 'code');
+
 $name = filter_input(INPUT_POST, 'name');
+$imgUrl = filter_input(INPUT_POST, 'imgUrl');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
+$color = filter_input(INPUT_POST, 'color');
 // Validate inputs
 if (
-    $category_id == null || $category_id == false || $code == null
-    || $name == null || $price == null || $price == false
+    $category_id == null || $category_id == false || $name == null
+    || $imgUrl == null || $price == null || $price == false || $color == null
 ) {
-    $error = "Invalid product data. Check all fields and try again.";
+    $error = 'Category ID: ' . $category_id . '<br> Name: ' . $name . '<br> ImgURL: ' . $imgUrl . '<br> Quantity: ' . $quantity . '<br> Color: ' . $color . '<br> Price: ' . $price;
     include('error.php');
 } else {
     require_once('database.php');
 
     // Add the product to the database  
-    $query = 'INSERT INTO products
-(categoryID, productCode, productName, price)
+    $query = "INSERT INTO products
+(name, imgUrl, quantity, price, categoryID, color)
 VALUES
-(:category_id, :code, :name, :price)';
+(:name, :imgUrl, 1, :price, :category_id, :color)";
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
-    $statement->bindValue(':code', $code);
     $statement->bindValue(':name', $name);
+    $statement->bindValue(':imgUrl', $imgUrl);
     $statement->bindValue(':price', $price);
+    $statement->bindValue(':color', $color);
     $statement->execute();
     $statement->closeCursor();
     // Display the Product List page

@@ -16,7 +16,7 @@ $statement->closeCursor();
 
 <head>
     <meta charset="UTF-8">
-    <title>StoreName | Home</title>
+    <title>TDC Outfitters | Home</title>
 
     <link rel="stylesheet" href="styles.css">
 
@@ -44,6 +44,10 @@ $statement->closeCursor();
             opacity: 1;
             transition: .5s ease;
         }
+
+        .clothing-item:hover {
+            transform: scale(1.1);
+        }
     </style>
 
 </head>
@@ -51,17 +55,17 @@ $statement->closeCursor();
 
 <body>
     <nav>
-        <h1 class="title">StoreName</h1>
+        <h1 class="title">TDC Outfitters</h1>
         <ul class="links">
             <li><a href="index.php" style="text-decoration: none; color: white">Home</a></li>
-            <li><a href="all-items.php"style="text-decoration: none; color: white">Store</a></li>
+            <li><a href="all-items.php" style="text-decoration: none; color: white">Store</a></li>
             <li><a href="AboutUs.html" style="text-decoration: none; color: white">About</a></li>
             <li><a href="Contact.html" style="text-decoration: none; color: white">Contact</a></li>
         </ul>
         <ul class="icons">
             <li><a href="search-page.php"><img src="search-icon.svg" alt="" class="top-icon"></a></li>
             <li><a href="http://localhost:8080/Group_4300_Project_war_exploded/Login.jsp"><img src="profile-icon.svg" alt="" class="top-icon" id="entry"></a></li>
-            <li><a href="ShoppingCart.html"><img src="cart-icon.svg" alt="" class="top-icon"></a></li>
+            <li><a href="ShoppingCart.php"><img src="cart-icon.svg" alt="" class="top-icon"></a></li>
         </ul>
     </nav>
     <main>

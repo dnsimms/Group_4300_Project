@@ -4,58 +4,6 @@
     <meta charset="UTF-8">
     <title>Checkout</title>
     <link rel="stylesheet" href="styles.css">
-
-    <style>
-        main {
-            padding-left: 8em;
-        }
-        .overview {
-            float: right;
-            width: 30%;
-            margin: 2em;
-            padding: 2em;
-            border: thin solid gray;
-            text-align: center;
-        }
-        .checkout-form {
-            margin: 2em;
-            padding: 2em;
-            border: thin solid gray;
-            text-align: center;
-            width: 45%
-        }
-        .checkout-fields {
-            margin: 1em;
-            height: 2.5em;
-        }
-        .numItems {
-            border-bottom: thin solid gray;
-        }
-        .checkout-form-label {
-            margin: .5em;
-            padding: .5em;
-        }
-        #address1, #address2, #ccn, #cardholder{
-            width: 35em;
-        }
-        #city {
-            width: 16.5em;
-        }
-
-        #state {
-            width: 5em;
-        }
-        #zip-code {
-            width: 11.5em;
-        }
-        #cvv {
-            width: 6em;
-            float: left;
-        }
-        #expiration {
-            width: 16em;
-        }
-    </style>
 </head>
 <body>
     <nav>
@@ -72,56 +20,30 @@
             <li><img src="../resources/cart-icon.svg" alt="" class="top-icon"></li>
         </ul>
     </nav>
-
-
     <main>
-        <form class="checkout-form">
-            <!-- This section is for the address information-->
+        <form>
             <h2 class="shippingAdd">Shipping Address</h2>
             <label class="checkout-form-label" for="address1">Address 1</label><br>
             <input type="text" class="checkout-fields" id="address1" name="address1" required/><br>
-
             <label class="checkout-form-label" for="address2">Address 2</label><br>
             <input type="text" class="checkout-fields" id="address2" name="address2"/><br>
-
             <label class="checkout-form-label" for="city">City</label>
             <label class="checkout-form-label" for="state">State</label>
             <label class="checkout-form-label" for="zip-code">Zip Code</label><br>
-
             <input type="text" class="checkout-fields" id="city" name="city" required/>
             <input type="text" class="checkout-fields" id="state" name="state" required/>
-            <input type="text" class="checkout-fields" id="zip-code" name="state" maxlength="5" required/><br>
-
-            <!-- This section is for payment information-->
+            <input type="text" class="checkout-fields" id="zip-code" name="state"
+                   pattern="[0-9\s]" maxlength="5" required/><br>
             <h2 class="paymentInfo">Payment Information</h2>
-            <label class="checkout-form-label" for="ccn">Card Number</label><br>
-            <input type="text" class="checkout-fields" id="ccn" name="ccn"
-                   maxlength="16" placeholder="xxxx-xxxx-xxxx-xxxx" required><br>
+            <label class="checkout-form-label" for="ccn">Card Number</label>
+            <input type="text" class="checkout-fields" id="ccn" name="ccn" pattern="[0-9\s{13,19}"
+                   maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
 
-            <label class="checkout-form-label" for="cardholder">Cardholder Name</label><br>
-            <input type="text" class="checkout-fields" id="cardholder" name="cardholder" required/><br>
 
-            <label class="checkout-form-label" for="cvv">CVV</label>
-            <label class="checkout-form-label" for="expiration">Expiration Date</label><br>
 
-            <input type="text" class="checkout-fields" id="cvv" name="cvv" maxlength="3" required/>
-            <!-- Might change expiration date to a select field, validation would be easier -->
-            <input type="text" class="checkout-fields" id="expiration" name="expiration" required/><br>
-
-            <input type="submit" class="checkout-button" id="checkout-button" name="checkout-button" value="PLACE ORDER"/>
         </form>
 
-        <div class="overview">
-            <!-- Will be easier to properly implement once database is running
-                 Whole area is basically a placeholder   -->
-            <h2 class="numItems">X Items</h2>
-            <p>Sub-total: ___</p>
-            <p>Shipping: ___</p>
-            <p>Tax: ___</p>
-        </div>
     </main>
-
-    <footer>Copyright &copy; 2020</footer>
 
 </body>
 </html>

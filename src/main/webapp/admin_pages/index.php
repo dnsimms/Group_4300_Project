@@ -54,7 +54,7 @@ $statement3->closeCursor();
 <body>
     <header>
         <a href="index.php" class="title-link">
-            <h1>StoreName Admin</h1>
+            <h1>TDC Outfitters | Admin Home</h1>
         </a>
     </header>
     <div class="container">
@@ -121,7 +121,7 @@ $statement3->closeCursor();
         </main>
     </div>
 
-    <footer>&copy; <?php echo date('Y') ?> StoreName, Inc.</footer>
+    <footer>&copy; <?php echo date('Y') ?> TDC Outfitters, Inc.</footer>
 
 </body>
 
