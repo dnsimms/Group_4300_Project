@@ -147,7 +147,7 @@ $product = $statement->fetch();
                     </div>
                     <div class="product-group">
                         <label class="product-label">Quantity:</label>
-                        <input type="number" name="productQuantity" min="0">
+                        <input type="number" name="quantity" min="0">
                     </div>
 
                     <input type="submit" value="Add To Cart">
