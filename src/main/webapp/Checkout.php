@@ -214,7 +214,7 @@ $statement->closeCursor();
     </table>
     <br>
     <p class="money">Sub-total: <?php echo "$" . $total_price; ?></p>
-    <p class="money">Shipping: <?php echo "$" . $shipping_price = 25; ?></p>
+    <p class="money">Shipping: <?php echo "$" . $shipping_price = 10; ?></p>
     <p class="money">Tax: <?php echo "$" . $tax = ($total_price + $shipping_price) * 0.07; ?></p><br>
     <p class="money">Total: <?php echo "$" . ($total_price + $shipping_price + $tax); ?></p>
 </aside>
