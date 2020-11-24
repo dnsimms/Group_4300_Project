@@ -18,7 +18,6 @@ $statement->closeCursor();
 
     <style>
         .overview {
-            float: right;
             width: 50%;
             margin: 2em;
             padding: 2em;
@@ -27,8 +26,8 @@ $statement->closeCursor();
         }
 
         .overview2 {
-            float: right;
             width: 30%;
+            height: 40%;
             margin: 2em;
             padding: 2em;
             border: thin solid gray;
@@ -61,6 +60,10 @@ $statement->closeCursor();
             text-align: right;
             font-size: 22px;
 
+        }
+
+        .shopping_page {
+            display: flex;
         }
 
         table,
@@ -97,64 +100,66 @@ $statement->closeCursor();
             <li><a href="ShoppingCart.php"><img src="cart-icon.svg" alt="" class="top-icon"></a></li>
         </ul>
     </nav>
+    <div class="shopping_page">
+        <div class="overview2">
 
-    <div class="overview2">
-
-        <form action="Checkout.php" method="post">
-            <?php $total_price = 0; ?>
-            <?php $num_items = 0; ?>
-
-            <?php foreach ($products as $product) : ?>
-                <?php $price = $product["quantity"] * $product["price"]; ?>
-                <?php $total_price += ($product["price"] * $product["quantity"]); ?>
-                <?php $num_items++; ?>
-            <?php endforeach; ?>
-
-            <h2 class="numItems"><?php echo $num_items; ?> Items</h2>
-
-            <p class="money">Sub-total: <?php echo "$" . $total_price; ?></p>
-            <p class="money">Shipping: <?php echo "$" . $shipping_price = 10; ?></p>
-            <p class="money">Tax: <?php echo "$" . $tax = ($total_price + $shipping_price) * 0.07; ?></p><br>
-            <p class="money">Total: <?php echo "$" . ($total_price + $shipping_price + $tax); ?></p>
-            <input type="submit" class="checkout-button" id="checkout-button" name="checkout-button" value="CHECKOUT" />
-        </form>
-    </div>
-
-    <aside class="overview">
-        <h2><?php echo $num_items; ?> Items</h2>
-        <table class="table-cart">
-            <tbody>
-                <tr>
-                    <th style="text-align: left;"></th>
-                    <th style="text-align: left;">Name</th>
-                    <th style="text-align: left;">Product ID</th>
-                    <th style="text-align: right;">Quantity</th>
-                    <th style="text-align: right;">Price</th>
-                    <th style="text-align: center;">Delete?</th>
-                </tr>
+            <form action="Checkout.php" method="post">
                 <?php $total_price = 0; ?>
+                <?php $num_items = 0; ?>
 
                 <?php foreach ($products as $product) : ?>
                     <?php $price = $product["quantity"] * $product["price"]; ?>
-                    <tr>
-                        <td><img src="<?php echo $product["imgUrl"]; ?>" class="cart-product-image" /></td>
-                        <td><?php echo $product["name"]; ?></td>
-                        <td><?php echo $product["productID"]; ?></td>
-                        <td><?php echo $product["quantity"]; ?></td>
-                        <td><?php echo "$" . $product["price"]; ?></td>
-                        <td>
-                            <form action="delete-cart-item.php" method="POST">
-                                <input type="hidden" name="cartID" value="<?php echo $product['cartID'] ?>">
-                                <input type="submit" id="deleteButton" value="DELETE FROM CART">
-                            </form>
-                        </td>
-                    </tr>
+                    <?php $total_price += ($product["price"] * $product["quantity"]); ?>
+                    <?php $num_items++; ?>
                 <?php endforeach; ?>
 
-            </tbody>
-        </table>
+                <h2 class="numItems"><?php echo $num_items; ?> Items</h2>
 
-    </aside>
+                <p class="money">Sub-total: <?php echo "$" . $total_price; ?></p>
+                <p class="money">Shipping: <?php echo "$" . $shipping_price = 10; ?></p>
+                <p class="money">Tax: <?php echo "$" . $tax = ($total_price + $shipping_price) * 0.07; ?></p><br>
+                <p class="money">Total: <?php echo "$" . ($total_price + $shipping_price + $tax); ?></p>
+                <input type="submit" class="checkout-button" id="checkout-button" name="checkout-button" value="CHECKOUT" />
+            </form>
+        </div>
+
+        <aside class="overview">
+            <h2><?php echo $num_items; ?> Items</h2>
+            <table class="table-cart">
+                <tbody>
+                    <tr>
+                        <th style="text-align: left;"></th>
+                        <th style="text-align: left;">Name</th>
+                        <th style="text-align: left;">Product ID</th>
+                        <th style="text-align: right;">Quantity</th>
+                        <th style="text-align: right;">Price</th>
+                        <th style="text-align: center;">Delete?</th>
+                    </tr>
+                    <?php $total_price = 0; ?>
+
+                    <?php foreach ($products as $product) : ?>
+                        <?php $price = $product["quantity"] * $product["price"]; ?>
+                        <tr>
+                            <td><img src="<?php echo $product["imgUrl"]; ?>" class="cart-product-image" /></td>
+                            <td><?php echo $product["name"]; ?></td>
+                            <td><?php echo $product["productID"]; ?></td>
+                            <td><?php echo $product["quantity"]; ?></td>
+                            <td><?php echo "$" . $product["price"]; ?></td>
+                            <td>
+                                <form action="delete-cart-item.php" method="POST">
+                                    <input type="hidden" name="cartID" value="<?php echo $product['cartID'] ?>">
+                                    <input type="submit" id="deleteButton" value="DELETE FROM CART">
+                                </form>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+
+                </tbody>
+            </table>
+
+        </aside>
+    </div>
+
 </body>
 
 <footer>Copyright &copy; 2020</footer>

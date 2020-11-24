@@ -119,6 +119,10 @@ $statement->closeCursor();
             text-align: center;
         }
 
+        .checkout_page {
+            display: flex;
+        }
+
 
     </style>
 </head>
@@ -138,86 +142,87 @@ $statement->closeCursor();
     </ul>
 </nav>
 
+<div class="checkout_page">
+    <main>
+        <form class="checkout-form" action="OrderConfirmation.php" method="post">
+            <!-- This section is for the address information-->
+            <h2 class="shippingAdd">Shipping Address</h2>
+            <label class="checkout-form-label" for="address1">Address 1</label><br>
+            <input type="text" class="checkout-fields" id="address1" name="address1" required/><br>
 
-<main>
-    <form class="checkout-form" action="OrderConfirmation.php" method="post">
-        <!-- This section is for the address information-->
-        <h2 class="shippingAdd">Shipping Address</h2>
-        <label class="checkout-form-label" for="address1">Address 1</label><br>
-        <input type="text" class="checkout-fields" id="address1" name="address1" required/><br>
+            <label class="checkout-form-label" for="address2">Address 2</label><br>
+            <input type="text" class="checkout-fields" id="address2" name="address2"/><br>
 
-        <label class="checkout-form-label" for="address2">Address 2</label><br>
-        <input type="text" class="checkout-fields" id="address2" name="address2"/><br>
+            <label class="checkout-form-label" for="city" id="cityLabel">City</label>
+            <label class="checkout-form-label" for="state" id="stateLabel">State</label>
+            <label class="checkout-form-label" for="zip-code" id="zipLabel">Zip Code</label><br>
 
-        <label class="checkout-form-label" for="city" id="cityLabel">City</label>
-        <label class="checkout-form-label" for="state" id="stateLabel">State</label>
-        <label class="checkout-form-label" for="zip-code" id="zipLabel">Zip Code</label><br>
+            <input type="text" class="checkout-fields" id="city" name="city" required/>
+            <input type="text" class="checkout-fields" id="state" name="state" required/>
+            <input type="text" class="checkout-fields" id="zip-code" name="state" maxlength="5" required/><br>
 
-        <input type="text" class="checkout-fields" id="city" name="city" required/>
-        <input type="text" class="checkout-fields" id="state" name="state" required/>
-        <input type="text" class="checkout-fields" id="zip-code" name="state" maxlength="5" required/><br>
+            <!-- This section is for payment information-->
+            <h2 class="paymentInfo">Payment Information</h2>
+            <label class="checkout-form-label" for="ccn">Card Number</label><br>
+            <input type="text" class="checkout-fields" id="ccn" name="ccn"
+                   maxlength="19" placeholder="xxxx-xxxx-xxxx-xxxx" required><br>
 
-        <!-- This section is for payment information-->
-        <h2 class="paymentInfo">Payment Information</h2>
-        <label class="checkout-form-label" for="ccn">Card Number</label><br>
-        <input type="text" class="checkout-fields" id="ccn" name="ccn"
-               maxlength="19" placeholder="xxxx-xxxx-xxxx-xxxx" required><br>
+            <label class="checkout-form-label" for="cardholder">Cardholder Name</label><br>
+            <input type="text" class="checkout-fields" id="cardholder" name="cardholder" required/><br>
 
-        <label class="checkout-form-label" for="cardholder">Cardholder Name</label><br>
-        <input type="text" class="checkout-fields" id="cardholder" name="cardholder" required/><br>
+            <label class="checkout-form-label" for="cvv">CVV</label>
+            <label class="checkout-form-label" for="expiration">Expiration Date</label><br>
 
-        <label class="checkout-form-label" for="cvv">CVV</label>
-        <label class="checkout-form-label" for="expiration">Expiration Date</label><br>
+            <input type="text" class="checkout-fields" id="cvv" name="cvv" maxlength="3" required/>
+            <!-- Might change expiration date to a select field, validation would be easier -->
+            <input type="text" class="checkout-fields" id="expiration" name="expiration"
+                   maxlength="5" placeholder="xx/xx" required/><br>
 
-        <input type="text" class="checkout-fields" id="cvv" name="cvv" maxlength="3" required/>
-        <!-- Might change expiration date to a select field, validation would be easier -->
-        <input type="text" class="checkout-fields" id="expiration" name="expiration"
-               maxlength="5" placeholder="xx/xx" required/><br>
+            <input type="submit" class="checkout-button" id="checkout-button" name="checkout-button" value="PLACE ORDER"/>
+        </form>
 
-        <input type="submit" class="checkout-button" id="checkout-button" name="checkout-button" value="PLACE ORDER"/>
-    </form>
+    </main>
 
-</main>
-
-<aside class="overview">
-    <?php $num_items = 0; ?>
-    <?php foreach ($products as $product) : ?>
-        <?php $num_items++; ?>
-    <?php endforeach; ?>
-    <h2><?php echo $num_items; ?> Items</h2>
-    <table class="table-cart">
-        <tbody>
-        <tr>
-            <th style="text-align: left;"></th>
-            <th style="text-align: left;">Name</th>
-            <th style="text-align: left;">Product ID</th>
-            <th style="text-align: right;">Quantity</th>
-            <th style="text-align: right;">Price</th>
-            <!--<th style="text-align: center;">Remove</th>-->
-        </tr>
-        <?php $total_price = 0; ?>
-
+    <aside class="overview">
+        <?php $num_items = 0; ?>
         <?php foreach ($products as $product) : ?>
-            <?php $price = $product["quantity"] * $product["price"]; ?>
-            <tr>
-                <td><img src="<?php echo $product["imgUrl"]; ?>" class="cart-product-image" /></td>
-                <td><?php echo $product["name"]; ?></td>
-                <td><?php echo $product["productID"]; ?></td>
-                <td><?php echo $product["quantity"]; ?></td>
-                <td><?php echo "$" . $product["price"]; ?></td>
-            </tr>
-            <?php $total_price += ($product["price"] * $product["quantity"]); ?>
-
+            <?php $num_items++; ?>
         <?php endforeach; ?>
+        <h2><?php echo $num_items; ?> Items</h2>
+        <table class="table-cart">
+            <tbody>
+            <tr>
+                <th style="text-align: left;"></th>
+                <th style="text-align: left;">Name</th>
+                <th style="text-align: left;">Product ID</th>
+                <th style="text-align: right;">Quantity</th>
+                <th style="text-align: right;">Price</th>
+                <!--<th style="text-align: center;">Remove</th>-->
+            </tr>
+            <?php $total_price = 0; ?>
 
-        </tbody>
-    </table>
-    <br>
-    <p class="money">Sub-total: <?php echo "$" . $total_price; ?></p>
-    <p class="money">Shipping: <?php echo "$" . $shipping_price = 10; ?></p>
-    <p class="money">Tax: <?php echo "$" . $tax = ($total_price + $shipping_price) * 0.07; ?></p><br>
-    <p class="money">Total: <?php echo "$" . ($total_price + $shipping_price + $tax); ?></p>
-</aside>
+            <?php foreach ($products as $product) : ?>
+                <?php $price = $product["quantity"] * $product["price"]; ?>
+                <tr>
+                    <td><img src="<?php echo $product["imgUrl"]; ?>" class="cart-product-image" /></td>
+                    <td><?php echo $product["name"]; ?></td>
+                    <td><?php echo $product["productID"]; ?></td>
+                    <td><?php echo $product["quantity"]; ?></td>
+                    <td><?php echo "$" . $product["price"]; ?></td>
+                </tr>
+                <?php $total_price += ($product["price"] * $product["quantity"]); ?>
+
+            <?php endforeach; ?>
+
+            </tbody>
+        </table>
+        <br>
+        <p class="money">Sub-total: <?php echo "$" . $total_price; ?></p>
+        <p class="money">Shipping: <?php echo "$" . $shipping_price = 10; ?></p>
+        <p class="money">Tax: <?php echo "$" . $tax = ($total_price + $shipping_price) * 0.07; ?></p><br>
+        <p class="money">Total: <?php echo "$" . ($total_price + $shipping_price + $tax); ?></p>
+    </aside>
+</div>
 
 <footer>Copyright &copy; 2020</footer>
 
