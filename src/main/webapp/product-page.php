@@ -130,11 +130,14 @@ $product = $statement->fetch();
                     <p class="product-label">Price:</p>
                     <p> $<?php echo $product['price'] ?>.00</p>
                 </div>
-                <form action="">
-                    <input type="hidden" value="<?php echo $productID ?>">
+                <form action="add-to-cart.php" method="POST">
+                    <input type="hidden" name="productID" value="<?php echo $productID ?>">
+                    <input type="hidden" name="name" value="<?php echo $product['name'] ?>">
+                    <input type="hidden" name="imgUrl" value="<?php echo $product['imgUrl'] ?>">
+                    <input type="hidden" name="price" value="<?php echo $product['price'] ?>">
                     <div class="product-group">
                         <label for="" class="product-label">Size:</label>
-                        <select name="size" id="">
+                        <select name="productSize" id="">
                             <option value="XS">XS</option>
                             <option value="S">S</option>
                             <option value="M">M</option>
@@ -144,7 +147,7 @@ $product = $statement->fetch();
                     </div>
                     <div class="product-group">
                         <label class="product-label">Quantity:</label>
-                        <input type="number" name="quantity" min="0">
+                        <input type="number" name="productQuantity" min="0">
                     </div>
 
                     <input type="submit" value="Add To Cart">
