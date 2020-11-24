@@ -99,7 +99,8 @@ if ($categoryID > 0) {
             margin-bottom: 2.5rem;
             margin-right: 2.5rem;
             margin-left: 1.25rem;
-
+            opacity: 1;
+            transition: .5s ease;
         }
 
         .clothing-item:hover {
@@ -187,9 +188,13 @@ if ($categoryID > 0) {
         <div class="all-items">
             <?php foreach ($products as $product) : ?>
                 <div class="clothing-item">
-                    <a href="product-page.php?productID=<?php echo $product['productID'] ?>">
-                        <img src="<?php echo $product['imgUrl'] ?>" class="images" width="100%" height="100%">
-                    </a>
+                    <img src="<?php echo $product['imgUrl'] ?>" class="images" width="100%" height="100%">
+                    <div class="middle">
+                        <form method="get" action="product-page.php">
+                            <input type="hidden" name="productID" value="<?php echo $product['productID'] ?>">
+                            <button type="submit" class="shopButton" name="shopButton">SHOP</button>
+                        </form>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
